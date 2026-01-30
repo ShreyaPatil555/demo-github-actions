@@ -1,10 +1,10 @@
-const http = require('http');
+const http = require("http");
+
+const VERSION = "v2.0";
 
 const server = http.createServer((req, res) => {
-  res.end("Hello from GitHub Actions\n");
+  res.end(`App Version: ${VERSION}
+Deployed at: ${new Date().toISOString()}`);
 });
 
-server.listen(3000, () => {
-  console.log("Server running on port 3000");
-});
-
+server.listen(3000);
